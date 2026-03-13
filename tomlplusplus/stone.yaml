@@ -1,0 +1,21 @@
+#
+# SPDX-FileCopyrightText: © 2026 AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : tomlplusplus
+version     : "3.4.0"
+release     : 1
+homepage    : https://github.com/marzer/tomlplusplus
+upstreams   :
+    - https://github.com/marzer/tomlplusplus/archive/refs/tags/v3.4.0.tar.gz : 8517f65938a4faae9ccf8ebb36631a38c1cadfb5efa85d9a72e15b9e97d25155
+summary     : Header-only TOML config parser and serializer for C++17
+description : |
+    Header-only TOML config parser and serializer for C++17.
+license     : MIT
+setup       : |
+    %meson
+build       : |
+    %meson_build
+install     : |
+    %meson_install

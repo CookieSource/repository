@@ -1,0 +1,38 @@
+#
+# SPDX-FileCopyrightText: © 2026 AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : aquamarine
+version     : "0.10.0"
+release     : 1
+homepage    : https://github.com/hyprwm/aquamarine
+upstreams   :
+    - https://github.com/hyprwm/aquamarine/archive/v0.10.0/aquamarine-0.10.0.tar.gz : 0ec80c86dd94d7f2836aac9ed415b9170109bd77048de791d837ee729f1ad76a
+summary     : Very light Linux rendering backend library
+description : |
+    Very light Linux rendering backend library.
+license     : BSD-3-Clause
+builddeps   :
+    - cmake(hyprwayland-scanner)
+    - pkgconfig(egl)
+    - pkgconfig(gbm)
+    - pkgconfig(gl)
+    - pkgconfig(hwdata)
+    - pkgconfig(hyprutils)
+    - pkgconfig(libdisplay-info)
+    - pkgconfig(libdrm)
+    - pkgconfig(libinput)
+    - pkgconfig(libseat)
+    - pkgconfig(libudev)
+    - pkgconfig(pixman-1)
+    - pkgconfig(pugixml)
+    - pkgconfig(wayland-client)
+    - pkgconfig(wayland-protocols)
+setup       : |
+    %cmake \
+        -DCMAKE_BUILD_TYPE=Release
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

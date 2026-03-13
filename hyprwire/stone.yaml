@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2026 AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : hyprwire
+version     : "0.3.0"
+release     : 1
+homepage    : https://github.com/hyprwm/hyprwire
+upstreams   :
+    - https://github.com/hyprwm/hyprwire/archive/v0.3.0/hyprwire-0.3.0.tar.gz : ba3ff4b82620209d5680ce0e771d0f2c41f78cdb96d5d84fa66e4f0709ca8de6
+summary     : Fast and consistent wire protocol for IPC
+description : |
+    Fast and consistent wire protocol for IPC.
+license     : BSD-3-Clause
+builddeps   :
+    - pkgconfig(hyprutils)
+    - pkgconfig(libffi)
+    - pkgconfig(pugixml)
+setup       : |
+    %cmake \
+        -DBUILD_TESTING=OFF \
+        -DCMAKE_BUILD_TYPE=Release
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

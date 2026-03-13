@@ -1,0 +1,40 @@
+#
+# SPDX-FileCopyrightText: © 2026 AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : hyprtoolkit
+version     : "0.5.3"
+release     : 1
+homepage    : https://github.com/hyprwm/hyprtoolkit
+upstreams   :
+    - https://github.com/hyprwm/hyprtoolkit/archive/v0.5.3/hyprtoolkit-0.5.3.tar.gz : 7e6671fd4bf6f4b1eda0115aa187aa183db40d59049cca1d7546fb46fdb4cdc0
+summary     : Modern C++ Wayland-native GUI toolkit
+description : |
+    Modern C++ Wayland-native GUI toolkit.
+license     : BSD-3-Clause
+builddeps   :
+    - cmake(hyprwayland-scanner)
+    - pkgconfig(aquamarine)
+    - pkgconfig(cairo)
+    - pkgconfig(egl)
+    - pkgconfig(gbm)
+    - pkgconfig(gl)
+    - pkgconfig(hyprgraphics)
+    - pkgconfig(hyprlang)
+    - pkgconfig(hyprutils)
+    - pkgconfig(iniparser)
+    - pkgconfig(libdrm)
+    - pkgconfig(pango)
+    - pkgconfig(pangocairo)
+    - pkgconfig(pixman-1)
+    - pkgconfig(wayland-client)
+    - pkgconfig(wayland-protocols)
+    - pkgconfig(xkbcommon)
+setup       : |
+    %cmake \
+        -DCMAKE_BUILD_TYPE=Release
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

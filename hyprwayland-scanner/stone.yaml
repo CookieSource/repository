@@ -1,0 +1,24 @@
+#
+# SPDX-FileCopyrightText: © 2026 AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : hyprwayland-scanner
+version     : "0.4.5"
+release     : 1
+homepage    : https://github.com/hyprwm/hyprwayland-scanner
+upstreams   :
+    - https://github.com/hyprwm/hyprwayland-scanner/archive/refs/tags/v0.4.5.tar.gz : 2125d279eea106e3e6c8dc9fa15181c75d67467b5352d24e2a07903b10abad62
+summary     : Hyprland implementation of wayland-scanner in and for C++
+description : |
+    Hyprland implementation of wayland-scanner in and for C++.
+license     : BSD-3-Clause
+builddeps   :
+    - pkgconfig(pugixml)
+setup       : |
+    %cmake \
+        -DCMAKE_BUILD_TYPE=Release
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

@@ -1,0 +1,22 @@
+#
+# SPDX-FileCopyrightText: © 2026 AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : muparser
+version     : "2.3.5"
+release     : 1
+homepage    : https://github.com/beltoforion/muparser
+upstreams   :
+    - https://github.com/beltoforion/muparser/archive/v2.3.5/muparser-2.3.5.tar.gz : 20b43cc68c655665db83711906f01b20c51909368973116dfc8d7b3c4ddb5dd4
+summary     : Fast math expression parser library
+description : |
+    Fast math expression parser library.
+license     : BSD-2-Clause
+setup       : |
+    %cmake \
+        -DCMAKE_BUILD_TYPE=None
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install

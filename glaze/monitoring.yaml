@@ -1,0 +1,5 @@
+releases:
+  id: 0
+  rss: https://github.com/stephenberry/glaze/releases.atom
+security:
+  cpe: ~

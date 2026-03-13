@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2026 AerynOS Developers
+#
+# SPDX-License-Identifier: MPL-2.0
+#
+name        : hyprutils
+version     : "0.11.0"
+release     : 1
+homepage    : https://github.com/hyprwm/hyprutils
+upstreams   :
+    - https://github.com/hyprwm/hyprutils/archive/v0.11.0/hyprutils-0.11.0.tar.gz : 1f097eb9915081f1b929973701643bcd8581b469c242eae5446275b120a3b229
+summary     : Hyprland utilities library used across the ecosystem
+description : |
+    Hyprland utilities library used across the ecosystem.
+license     : BSD-3-Clause
+builddeps   :
+    - pkgconfig(pixman-1)
+setup       : |
+    %cmake \
+        -DBUILD_TESTING=OFF \
+        -DCMAKE_BUILD_TYPE=Release
+build       : |
+    %cmake_build
+install     : |
+    %cmake_install
